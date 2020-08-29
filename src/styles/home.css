@@ -146,6 +146,8 @@ main{
 
 .__search-bar{
     padding: 20px !important;
+    position: sticky !important;
+    top: 30px !important;
 }
 
 /* .__search-bar:hover > .__input{

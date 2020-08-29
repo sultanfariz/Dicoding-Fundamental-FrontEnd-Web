@@ -19,7 +19,7 @@ class SearchBar extends HTMLElement {
 
     render() {
         this.innerHTML = `
-        <div class="__search-bar">
+        <div class="__search-bar __sticky" style="position:sticky !important; top:30px !important;">
             <input class="__input" type="search" placeholder="Type to search" id="searchText">
             <button class="__button" id="searchButton" type="submit">
                 <i class="fas fa-search"></i>
@@ -27,6 +27,9 @@ class SearchBar extends HTMLElement {
         </div>`;
 
         this.querySelector('#searchButton').addEventListener("click", this._clickEvent);
+        this.querySelector('#searchText').addEventListener("keyup", (event) => {
+            if (event.keyCode == 13) document.getElementById("searchButton").click();
+        });
     }
 }
 
